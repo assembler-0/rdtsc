@@ -15,11 +15,11 @@ set(LIB_SOURCES
 	lib/rdtscp.c
 )
 
-add_library(rdtsc_s SHARED ${LIB_SOURCES})
+add_library(tsc ${LIB_SOURCES})
 
 add_executable(rdtsc ${EXEC_SOURCES})
 target_include_directories(rdtsc PRIVATE
 	.
 	include
 )
-target_link_libraries(rdtsc rdtsc_s)
+target_link_libraries(rdtsc tsc)
